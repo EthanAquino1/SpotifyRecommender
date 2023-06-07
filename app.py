@@ -194,6 +194,9 @@ def get_artist(df, genre_number):
 playlist = ['Pop Playlist']
 playlist_id_temp = '4BFmMCmr1lbWgC10XepNic'
 
+#The code commented out would be implemented if a user were to access the spotify API directly, but for the sake of this project one playlist will
+#be used to avoid breaching a client secret/running the api too much.
+
 def app():
     
     st.title("Spotify New Genre/Artist Recommender System")
