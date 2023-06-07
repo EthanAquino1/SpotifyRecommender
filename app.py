@@ -117,8 +117,8 @@ def get_track_genres(track_ids):
 
 ##########################################
 
-dfspotifyall = pd.read_csv("dfspotifyall.csv")
-dfmyspotifyall = pd.read_csv("dfmyspotifyall.csv") #Not needed if we have a user implementing their own playlist
+dfspotifyall = pd.read_csv("Data/dfspotifyall.csv")
+dfmyspotifyall = pd.read_csv("Data/dfmyspotifyall.csv") #Not needed if we have a user implementing their own playlist
 
 
 genre_counts = Counter()
