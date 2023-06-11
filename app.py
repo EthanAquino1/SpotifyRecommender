@@ -139,22 +139,17 @@ for genre in genre_names:
     key += 1
     
 def filter_popular_genres(df, column_name, num_genres=20):
-    # Convert genre column to lists
     df[column_name] = df[column_name].apply(ast.literal_eval)
     
-    # Count genre occurrences
     genre_counts = Counter()
     for genres in df[column_name]:
         genre_counts.update(genres)
     
-    # Get the most popular genres
     popular = genre_counts.most_common(num_genres)
     popular_genres = [genre for genre, _ in popular]
     
-    # Add new column with genre classification number
     df['genre_classification'] = df[column_name].apply(lambda x: tuple([popular_genres.index(genre) + 1 for genre in x if genre in popular_genres]))
     
-    # Filter the dataframe based on popular genres
     filtered_df = df[df[column_name].apply(lambda x: any(genre in x for genre in popular_genres))]
     
     return filtered_df
